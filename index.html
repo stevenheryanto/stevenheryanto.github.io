@@ -21,7 +21,7 @@
       <nav class="hidden gap-6 text-sm text-slate-400 sm:flex">
         <a href="#case-studies" class="hover:text-white transition">Case Studies</a>
         <a href="#timeline" class="hover:text-white transition">Evolution</a>
-        <a href="#projects" class="hover:text-white transition">Projects</a>
+        <a href="#projects" class="hover:text-white transition">All Projects</a>
         <a href="#stack" class="hover:text-white transition">Tech Stack</a>
       </nav>
       <a href="mailto:stevenheryanto@gmail.com" class="rounded-md bg-sky-500 px-3.5 py-1.5 text-xs font-semibold text-slate-950 hover:bg-sky-400 transition">
@@ -179,63 +179,29 @@
       </div>
     </section>
 
-    <!-- Filterable Project Highlights -->
+    <!-- Complete Individual Project Archive -->
     <section id="projects" class="border-t border-slate-800 py-16">
-      <div class="flex flex-col justify-between gap-4 sm:flex-row sm:items-center">
+      <div class="flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
         <div>
-          <h2 class="text-2xl font-bold text-white">Selected Project Archive</h2>
-          <p class="mt-1 text-sm text-slate-400">Filter by career era.</p>
+          <h2 class="text-2xl font-bold text-white">Project Archive <span id="project-count" class="ml-2 font-mono text-sm font-normal text-sky-400"></span></h2>
+          <p class="mt-1 text-sm text-slate-400">Filter by era or search by client, domain, or technology.</p>
         </div>
-        <div class="flex flex-wrap gap-2" id="filters">
-          <button data-filter="all" class="filter-btn rounded-md bg-sky-500 px-3 py-1.5 text-xs font-semibold text-slate-950">All</button>
-          <button data-filter="distributed" class="filter-btn rounded-md bg-slate-800 px-3 py-1.5 text-xs font-medium text-slate-300 hover:bg-slate-700">2023–Present</button>
-          <button data-filter="cloud" class="filter-btn rounded-md bg-slate-800 px-3 py-1.5 text-xs font-medium text-slate-300 hover:bg-slate-700">2019–2022</button>
-          <button data-filter="erp" class="filter-btn rounded-md bg-slate-800 px-3 py-1.5 text-xs font-medium text-slate-300 hover:bg-slate-700">2011–2018</button>
-        </div>
+        <input
+          id="project-search"
+          type="text"
+          placeholder="Search projects (e.g. AWS, Laravel, PUB)..."
+          class="w-full rounded-lg border border-slate-800 bg-slate-900 px-3.5 py-2 text-xs text-slate-200 placeholder-slate-500 focus:border-sky-500 focus:outline-none sm:w-64"
+        />
       </div>
 
-      <div class="mt-8 grid gap-4 sm:grid-cols-2" id="project-grid">
-        <div data-era="distributed" class="project-card rounded-lg border border-slate-800 p-4">
-          <div class="font-mono text-xs text-slate-400">2026 • PT Garuda Yamato Steel</div>
-          <div class="mt-1 font-semibold text-white">Internal Audit Management System</div>
-          <p class="mt-1 text-xs text-slate-400">ISO 9001/14001/45001/17025 digital audit blueprint and cybersecurity specifications.</p>
-        </div>
-        <div data-era="distributed" class="project-card rounded-lg border border-slate-800 p-4">
-          <div class="font-mono text-xs text-slate-400">2024 • AYO Platform (PMI)</div>
-          <div class="mt-1 font-semibold text-white">Stock Recommendation (BRIAN) &amp; Control Tower BCP</div>
-          <p class="mt-1 text-xs text-slate-400">Predictive inventory replenishment (Laravel, AWS Cognito) and multi-AZ ECS disaster recovery.</p>
-        </div>
-        <div data-era="distributed" class="project-card rounded-lg border border-slate-800 p-4">
-          <div class="font-mono text-xs text-slate-400">2023–2024 • AYO International (PH, JO, ME)</div>
-          <div class="mt-1 font-semibold text-white">Cross-Border B2B Commerce &amp; Arabic RTL</div>
-          <p class="mt-1 text-xs text-slate-400">Localization, tax compliance, RTL i18n, and omnichannel chatbot/callbot order ingestion.</p>
-        </div>
-        <div data-era="cloud" class="project-card rounded-lg border border-slate-800 p-4">
-          <div class="font-mono text-xs text-slate-400">2022 • PT Astra Honda Motor</div>
-          <div class="mt-1 font-semibold text-white">Learning Development System (LDS) 2.1</div>
-          <p class="mt-1 text-xs text-slate-400">Enterprise B2E corporate LMS and competency matrix in C#, ASP.NET, and SQL Server.</p>
-        </div>
-        <div data-era="cloud" class="project-card rounded-lg border border-slate-800 p-4">
-          <div class="font-mono text-xs text-slate-400">2021–2022 • PT H.M. Sampoerna</div>
-          <div class="mt-1 font-semibold text-white">PBO Campus Cloud Migration &amp; Medical AI OCR</div>
-          <p class="mt-1 text-xs text-slate-400">Monolith-to-AWS ECS migration (99.9% uptime) and Python OCR claims automation (14d → 2d).</p>
-        </div>
-        <div data-era="cloud" class="project-card rounded-lg border border-slate-800 p-4">
-          <div class="font-mono text-xs text-slate-400">2020 • PT H.M. Sampoerna</div>
-          <div class="mt-1 font-semibold text-white">PrivyID Digital Signature &amp; House of Sampoerna</div>
-          <p class="mt-1 text-xs text-slate-400">Remote contract signing (7d → 2h turnaround) and AWS CloudFront 360° digital museum portal.</p>
-        </div>
-        <div data-era="erp" class="project-card rounded-lg border border-slate-800 p-4">
-          <div class="font-mono text-xs text-slate-400">2018–2020 • PUB Waterhub Singapore</div>
-          <div class="mt-1 font-semibold text-white">Public Utility HR &amp; Enterprise Learning (ELM)</div>
-          <p class="mt-1 text-xs text-slate-400">PeopleSoft HCM 9.2 / ELM entitlement transfers and multi-level government workflows.</p>
-        </div>
-        <div data-era="erp" class="project-card rounded-lg border border-slate-800 p-4">
-          <div class="font-mono text-xs text-slate-400">2011–2018 • Permata Bank, BTPN, SMBCI, Angkasa Pura I</div>
-          <div class="mt-1 font-semibold text-white">Banking, Core ERP Upgrades &amp; Airport FIDS</div>
-          <p class="mt-1 text-xs text-slate-400">J2EE internet banking, PeopleSoft 8.9→9.2 upgrade, Global Payroll bonuses, and real-time FIDS.</p>
-        </div>
+      <div class="mt-5 flex flex-wrap gap-2" id="filters">
+        <button data-filter="all" class="filter-btn rounded-md bg-sky-500 px-3 py-1.5 text-xs font-semibold text-slate-950">All</button>
+        <button data-filter="distributed" class="filter-btn rounded-md bg-slate-800 px-3 py-1.5 text-xs font-medium text-slate-300 hover:bg-slate-700">2023–Present</button>
+        <button data-filter="cloud" class="filter-btn rounded-md bg-slate-800 px-3 py-1.5 text-xs font-medium text-slate-300 hover:bg-slate-700">2019–2022</button>
+        <button data-filter="erp" class="filter-btn rounded-md bg-slate-800 px-3 py-1.5 text-xs font-medium text-slate-300 hover:bg-slate-700">2011–2019</button>
       </div>
+
+      <div class="mt-6 grid gap-4 sm:grid-cols-2" id="project-grid"></div>
     </section>
 
     <!-- Tech Stack -->
@@ -274,24 +240,110 @@
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
 
+    const projects = [
+      // 2023 - Present
+      { title: "Replenishment Picking List (TOM / Synergy Plan)", period: "Mar 2026 – Present", client: "PT H.M. Sampoerna (PMI)", era: "distributed", stack: [".NET Framework", "C#", "MS SQL Server"], summary: "Automated transport planning, multi-drop routing, vehicle load factors, and UoM conversion across manufacturing plants." },
+      { title: "Internal Audit Management System", period: "2026", client: "PT Garuda Yamato Steel (GYS)", era: "distributed", stack: ["ISO 9001/14001/45001", "Security", "Architecture"], summary: "Digitalized internal audit blueprint, workflows, and cybersecurity specifications for steel manufacturing compliance." },
+      { title: "Push Notification Re-Architecture", period: "Apr 2025 – Sep 2025", client: "AYO (PMI)", era: "distributed", stack: ["Bun", "TypeScript", "AWS SQS/SNS", "ECS", "FCM"], summary: "Event-driven notification fan-out reducing delivery latency from days to P99 ≤ 12 seconds on lean containers." },
+      { title: "AYO Hero / Satria Last Mile Delivery (LMD)", period: "Jul 2025 – Aug 2025", client: "AYO (PMI)", era: "distributed", stack: ["Laravel", "Azure AD", "Espay VA", "WMS ASSA"], summary: "End-to-end LMD platform for 2,000+ Trade Assistants with van stock reconciliation and automated daily cash settlement." },
+      { title: "PH Revamp Phase 3", period: "Aug 2024 – Oct 2024", client: "AYO Philippines (PMI)", era: "distributed", stack: ["PHP/Laravel", "Microservices", "MySQL"], summary: "Template-based product bundles, volume discount structures, and standardized UoM across checkout microservices." },
+      { title: "Stock Recommendation (BRIAN Platform)", period: "Apr 2024 – Jun 2024", client: "AYO (PMI)", era: "distributed", stack: ["AWS", "Laravel", "Cognito", "Yellow API"], summary: "Predictive inventory replenishment platform for Field Force tablets and retail merchants to reduce stockouts." },
+      { title: "Jordan Data Filtering & Migration", period: "Feb 2024 – May 2024", client: "AYO Jordan (PMI)", era: "distributed", stack: ["AWS RDS", "MySQL", "Stored Procedures"], summary: "Zero-downtime multi-tenant backfill isolating millions of records using self-throttling batches and peak-hour kill switches." },
+      { title: "Control Tower — Business Continuity Plan (BCP)", period: "Jan 2024 – Feb 2024", client: "AYO (PMI)", era: "distributed", stack: ["Amazon ECS", "CloudWatch", "EventBridge"], summary: "Multi-AZ disaster recovery, circuit breakers, and Locust failover simulations for B2B order orchestration." },
+      { title: "AYO Jordan Local Requirement", period: "Nov 2023 – Jan 2024", client: "AYO Jordan (PMI)", era: "distributed", stack: ["Laravel", "REST APIs", "Tax Compliance"], summary: "Statutory tax identification, bilingual invoice schemas, and modular country-flag configurations for Jordan launch." },
+      { title: "AYO Middle-East Arabic Implementation", period: "Aug 2023 – Nov 2023", client: "AYO Middle East (PMI)", era: "distributed", stack: ["Laravel", "RTL UI", "i18n"], summary: "End-to-end Arabic localization, RTL layout metadata, UTF-8 notifications, and regional currency/timezone handling." },
+      { title: "AYO Control Tower", period: "May 2023 – Aug 2023", client: "AYO (PMI)", era: "distributed", stack: ["Amazon ECS", "Laravel", "Yellow.ai", "WMS"], summary: "Core omnichannel order dispatch microservice connecting conversational AI orders to regional WMS gateways." },
+      { title: "AYO Mitra Mobile", period: "Feb 2023 – May 2023", client: "AYO (PMI)", era: "distributed", stack: ["React Native", "Android", "Laravel API"], summary: "Mobile wholesaler operations app cutting order confirmation turnaround from hours to minutes on low-bandwidth networks." },
+      { title: "Control Tower Transaction Service", period: "Jan 2023 – Feb 2023", client: "AYO (PMI)", era: "distributed", stack: ["Laravel", "AWS S3", "CITA/MITA", "WMS"], summary: "Internal S3 CSV ingestion microservice replacing third-party middleware for chatbot and callbot order bookings." },
+
+      // 2019 - 2022
+      { title: "AYO DTE (Digital Trade Engagement)", period: "Nov 2022 – Jan 2023", client: "AYO Philippines (PMI)", era: "cloud", stack: ["PHP", "Laravel", "MySQL"], summary: "Automated retailer self-registration (days to <15 mins) and flexible B2B gamification challenges engine." },
+      { title: "Learning Development System (LDS) 2.1", period: "Jun 2022 – Oct 2022", client: "PT Astra Honda Motor (AHM)", era: "cloud", stack: ["C#", "ASP.NET", "SQL Server", "B2E"], summary: "Enterprise corporate LMS, competency matrices, and People Development Plans aligned with AHM B2E standards." },
+      { title: "AWB 2.1 Enhancement", period: "May 2022 – Jun 2022", client: "PT H.M. Sampoerna", era: "cloud", stack: ["PHP", "MySQL", "Apache"], summary: "Responsive UI modernization and optimized scoring aggregation queries for corporate employee wellbeing surveys." },
+      { title: "PBO Campus Cloud Migration", period: "Jan 2022 – Mar 2022", client: "PT H.M. Sampoerna", era: "cloud", stack: ["AWS ECS/RDS/S3", "Docker", "Laravel", "React"], summary: "Decomposed on-prem monolith into containerized AWS microservices and React SPA, achieving 99.9% uptime." },
+      { title: "Sampoerna Career Portal Revamp", period: "Nov 2021 – Dec 2021", client: "PT H.M. Sampoerna", era: "cloud", stack: ["PHP", "React.js", "MySQL"], summary: "Modernized recruitment portal with admin candidate tracking console and public anti-fraud verification." },
+      { title: "Omnibus Law (UU Cipta Kerja) HR Compliance", period: "2021", client: "PT H.M. Sampoerna", era: "cloud", stack: ["PeopleSoft HCM", "PeopleCode", "Global Payroll"], summary: "Automated PKWT contract compensation and termination calculation rules complying with PP 35/2021." },
+      { title: "Medical AI — Healthcare Receipt OCR Claims", period: "2021", client: "PT H.M. Sampoerna", era: "cloud", stack: ["Python", "AI OCR", "REST API"], summary: "Automated hospital invoice parsing and duplicate detection, cutting reimbursement cycles from 14 days to 2 days." },
+      { title: "ERP & SOA Integration Modernization", period: "2021", client: "PT Badak NGL", era: "cloud", stack: ["PeopleSoft HRMS", "Oracle EBS", "SOA Suite", "IDM"], summary: "Audited and aligned SOA integration interfaces connecting HR lifecycles with Identity Management and Financial ERP." },
+      { title: "Time to Recognize (TTR) Migration (Thrive)", period: "Nov 2020 – Jan 2021", client: "PT H.M. Sampoerna", era: "cloud", stack: ["Laravel", "React.js", "AWS", "Azure SSO"], summary: "Rewrote legacy CodeIgniter recognition app into Laravel + React on AWS with Microsoft Azure AD Single Sign-On." },
+      { title: "House of Sampoerna (HoS) Digital Museum Portal", period: "Aug 2020 – Sep 2020", client: "PT H.M. Sampoerna", era: "cloud", stack: ["PHP", "MySQL", "AWS CloudFront", "SCORM 360"], summary: "Virtual museum portal featuring 360-degree interactive exhibits, CDN streaming, and behavioral analytics." },
+      { title: "Support Non-Payroll Batch Job Modernization", period: "Sep 2020", client: "PT H.M. Sampoerna", era: "cloud", stack: ["PeopleTools", "App Engine", "Process Scheduler"], summary: "Remediated M_HMSLTR and ITFC_HR2U batch jobs onto secure service accounts, restoring 100% scheduled reliability." },
+      { title: "PBO Campus (v1 Platform Implementation)", period: "Jun 2020 – Sep 2020", client: "PT H.M. Sampoerna", era: "cloud", stack: ["PHP", "MySQL", "JavaScript", "HTML5/CSS3"], summary: "Initial corporate e-learning platform with video courses, timed quizzes, certificates, and HR compliance dashboards." },
+      { title: "Digital Signature & PrivyID Integration (Ph 1–2.5)", period: "Apr 2020 – Aug 2020", client: "PT H.M. Sampoerna", era: "cloud", stack: ["PHP", "XML APIs", "PrivyID", "ExcelToCI"], summary: "Digitized 100% of employment contracts during COVID-19, slashing turnaround from 7 days to under 2 hours." },
+      { title: "Travel Request & Allowance (TRA) Replacement", period: "May 2020 – Jul 2020", client: "PT H.M. Sampoerna", era: "cloud", stack: ["PHP", "MySQL", "Enterprise Workflows"], summary: "Modernized travel request platform with automated Home Visit Balance quota and allowance verification." },
+      { title: "e-Letter & Power of Attorney (POA) Automation", period: "2020", client: "PT H.M. Sampoerna", era: "cloud", stack: ["PeopleTools", "App Engine", "BI Publisher"], summary: "Self-service generation of watermarked corporate e-Letters and POA PDFs, reducing 3–5 day waits to instant downloads." },
+      { title: "AWB — Skill for Future & Pen-Test Hardening", period: "Mar 2020 – Apr 2020", client: "PT H.M. Sampoerna", era: "cloud", stack: ["PHP", "MySQL", "OWASP Security"], summary: "Built employee upskilling course catalog and remediated critical penetration test findings for full security sign-off." },
+      { title: "Work From Home (WFH) Emergency Guide Portal", period: "Mar 2020 – Apr 2020", client: "PT H.M. Sampoerna", era: "cloud", stack: ["PHP", "HTML5/CSS3", "Responsive UI"], summary: "Rapidly deployed centralized remote-work knowledge portal within one week, reducing IT helpdesk volume." },
+
+      // 2011 - 2019
+      { title: "PeopleSoft HR & LMS Implementation", period: "Nov 2018 – Jan 2020", client: "PUB Waterhub Singapore", era: "erp", stack: ["PeopleSoft HCM 9.2", "ELM", "Oracle SQL", "SQR"], summary: "Government public utility LMS with automated course entitlement transfers and multi-level approval hierarchies." },
+      { title: "PeopleSoft HRMS & Incentive System", period: "2018 – 2019", client: "Bank BTPN", era: "erp", stack: ["PeopleSoft HCM", "SQR", "Incentive Payroll"], summary: "Automated tiered branch incentive calculations and workforce analytics reports across nationwide banking branches." },
+      { title: "Recruitment & Talent Platform (MSS)", period: "2018 – 2019", client: "PT Triputra Agro Persada (TAP)", era: "erp", stack: ["PeopleSoft HCM", "MSS", "ExcelToCI"], summary: "Implemented recruitment, succession planning, and offline bulk applicant ingestion for remote plantation estates." },
+      { title: "Recruitment & Training Module Enhancement", period: "Apr 2018 – Jul 2018", client: "Bank Sumitomo Mitsui Indonesia (SMBCI)", era: "erp", stack: ["PeopleSoft HCM", "PeopleCode", "AWE"], summary: "Streamlined validations and built multi-tiered Approval Workflow Engine (AWE), cutting recruitment turnaround by 40%." },
+      { title: "Project NINE Ext. Phase 2 (Bonus Engines)", period: "Nov 2017 – Jan 2018", client: "PT H.M. Sampoerna", era: "erp", stack: ["Global Payroll", "App Engine", "Oracle SQL"], summary: "High-precision annual and quarterly bonus calculation engine with PPh 21 tax compliance for tens of thousands of staff." },
+      { title: "Project NINE Extension (Email Approvals)", period: "Mar 2017 – Sep 2017", client: "PT H.M. Sampoerna", era: "erp", stack: ["PeopleTools", "App Engine", "Email AWE"], summary: "Cryptographic email approval framework allowing executives to approve ERP requests directly from email without VPN." },
+      { title: "Role Request Automation System", period: "Jan 2017 – Mar 2017", client: "PT H.M. Sampoerna", era: "erp", stack: ["PeopleSoft Security", "PeopleTools", "Oracle SQL"], summary: "Self-service menu access governance with Segregation of Duties (SoD) approvals and dynamic role provisioning." },
+      { title: "Mutation Benefit Module", period: "Sep 2016 – Nov 2016", client: "PT OTO Multiartha", era: "erp", stack: ["PeopleSoft HCM", "MS SQL Server", "PeopleCode"], summary: "Automated multi-city employee relocation benefit calculations and approvals, accelerating disbursement from weeks to days." },
+      { title: "PeopleSoft Major Upgrade (v8.9 to v9.2)", period: "Mar 2016 – Oct 2016", client: "PT H.M. Sampoerna", era: "erp", stack: ["PeopleTools 8.54", "Oracle SQL", "Data Mover"], summary: "Retrofitted hundreds of custom objects and upgraded core HCM to v9.2 with zero payroll disruption." },
+      { title: "Flight Information Display System (FIDS)", period: "May 2012 – Dec 2012", client: "Frans Kaisiepo Airport / Angkasa Pura I", era: "erp", stack: ["PHP", "MySQL", "JavaScript", "Audio Hardware"], summary: "Real-time airport flight schedule management, terminal display boards, and synchronized multilingual audio announcements." },
+      { title: "Permata e-Business Internet Banking", period: "Feb 2011 – Aug 2011", client: "Permata Bank", era: "erp", stack: ["Java", "J2EE", "Spring/Struts", "Oracle SQL"], summary: "Corporate internet banking enhancements, treasury modules, and high-priority defect resolution under banking compliance." }
+    ];
+
+    const grid = document.getElementById('project-grid');
+    const countEl = document.getElementById('project-count');
+    const searchInput = document.getElementById('project-search');
     const buttons = document.querySelectorAll('.filter-btn');
-    const cards = document.querySelectorAll('.project-card');
+
+    let activeFilter = 'all';
+
+    function renderProjects() {
+      const q = searchInput.value.trim().toLowerCase();
+      const filtered = projects.filter(p => {
+        const matchesEra = activeFilter === 'all' || p.era === activeFilter;
+        const matchesQuery = !q ||
+          p.title.toLowerCase().includes(q) ||
+          p.client.toLowerCase().includes(q) ||
+          p.summary.toLowerCase().includes(q) ||
+          p.stack.some(s => s.toLowerCase().includes(q));
+        return matchesEra && matchesQuery;
+      });
+
+      countEl.textContent = `(${filtered.length})`;
+
+      if (!filtered.length) {
+        grid.innerHTML = `<div class="col-span-full rounded-lg border border-slate-800 p-8 text-center text-sm text-slate-400">No projects match your filter.</div>`;
+        return;
+      }
+
+      grid.innerHTML = filtered.map(p => `
+        <article class="flex flex-col justify-between rounded-lg border border-slate-800 bg-slate-900/30 p-5 hover:border-slate-700 transition">
+          <div>
+            <div class="font-mono text-xs text-slate-400">${p.period} • ${p.client}</div>
+            <h3 class="mt-1.5 font-semibold text-white">${p.title}</h3>
+            <p class="mt-2 text-xs leading-relaxed text-slate-400">${p.summary}</p>
+          </div>
+          <div class="mt-4 flex flex-wrap gap-1.5">
+            ${p.stack.map(tech => `<span class="rounded bg-slate-800/90 px-2 py-0.5 font-mono text-[11px] text-slate-300">${tech}</span>`).join('')}
+          </div>
+        </article>
+      `).join('');
+    }
 
     buttons.forEach(btn => {
       btn.addEventListener('click', () => {
-        const filter = btn.dataset.filter;
+        activeFilter = btn.dataset.filter;
         buttons.forEach(b => {
           b.classList.remove('bg-sky-500', 'text-slate-950', 'font-semibold');
           b.classList.add('bg-slate-800', 'text-slate-300', 'font-medium');
         });
         btn.classList.add('bg-sky-500', 'text-slate-950', 'font-semibold');
         btn.classList.remove('bg-slate-800', 'text-slate-300', 'font-medium');
-
-        cards.forEach(card => {
-          card.style.display = (filter === 'all' || card.dataset.era === filter) ? 'block' : 'none';
-        });
+        renderProjects();
       });
     });
+
+    searchInput.addEventListener('input', renderProjects);
+    renderProjects();
   </script>
 </body>
 </html>
